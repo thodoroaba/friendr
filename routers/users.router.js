@@ -1,33 +1,24 @@
 const express = require('express')
+const usersController = require('../controllers/users.controller');
+
 const router = express.Router()
 
-//TODO remove
-const users = [
-    { id: 1, firstName: "Forrest", lastName: "Gump" },
-    { id: 2, firstName: "Hari", lastName: "Seldon" },
-    { id: 3, firstName: "Tom", lastName: "Cruise" },
-];
-
 router.post('/', (req, res) => {
-    console.log(req.body);
+    usersController.createUser(req.body);
     res.status(201);
     res.send("Successfully created!")
 })
 
+
 router.get('/', (req, res) => {
     const reqUserId = req.query.id;
-    let found = false;
-    for(const user of users) {
-        if(user.id == reqUserId) {
-            res.send(user);
-            return;
-        }
-    }
-    if(!found){
-        res.status(404).send();
-    }
+    res.status(404).send();
 })
 
-
+router.delete('/:id', (req, res) => {
+    const reqUserId = req.params.id;
+    usersController.delete(reqUserId);
+    res.status(200).send();
+})
 
 module.exports = router;
