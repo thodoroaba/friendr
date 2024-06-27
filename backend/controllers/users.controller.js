@@ -10,7 +10,7 @@ const usersController = {
     res.status(200).send(userObj);
   },
   createUser: async (req, res) => {
-    console.log("Reached user controller!");
+    console.log("Reached user controller");
     const userToBeCreated = req.body;
     console.log(userToBeCreated);
 
