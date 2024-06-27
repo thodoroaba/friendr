@@ -3,11 +3,10 @@ const mongoose = require('mongoose');
 const UserModel = mongoose
 .model('User',
     {
-        id: String,
+        id: Number,
         firstName: String,
         lastName: String,
         username: String,
-        birthYear: Number
     }
 );
 
