@@ -1,0 +1,14 @@
+<!-- Binding to ts -->
+<div class="child">
+  <!-- | titlecase is a PIPE -->
+  <div>{{ postInput.title | titlecase }}</div>
+
+  <!-- | date is a date PIPE -->
+  <div>{{ postInput.date | date }}</div>
+
+  <!-- Description -->
+  <div>{{ postInput.description }}</div>
+
+  <!-- Binding to a function -->
+  <button (click)="likePost()">Like</button>
+</div>

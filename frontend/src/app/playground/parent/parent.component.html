@@ -1,0 +1,13 @@
+<div class="parent">
+  <h2>Parent</h2>
+
+  <input placeholder="Title..." [(ngModel)]="title" /> <br />
+  <br />
+  <input placeholder="Description..." [(ngModel)]="description" /> <br />
+  <br />
+  <button (click)="createPost()">Submit</button>
+
+  <ng-container *ngFor="let post of posts">
+    <app-child [postInput]="post"></app-child>
+  </ng-container>
+</div>
