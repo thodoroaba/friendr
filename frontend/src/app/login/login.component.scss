@@ -1,0 +1,43 @@
+.container {
+  background-color: #eeeeee;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+.login-card {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 500px;
+  height: auto;
+  background-color: grey;
+  border-radius: 8px;
+  padding: 32px;
+  gap: 8px;
+}
+
+.sign-in-btn {
+  margin-top: 16px;
+  background-color: red;
+  width: 100%;
+  height: 60px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+
+  //   border: none;
+  //   color: white;
+  //   padding: 15px 32px;
+  //   text-align: center;
+  //   text-decoration: none;
+  //   display: inline-block;
+  //   font-size: 16px;
+  //   margin: 4px 2px;
+  cursor: pointer;
+}
