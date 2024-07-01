@@ -1,0 +1,145 @@
+$blue: #163ac7;
+$red: #e1251b;
+
+header {
+  background-color: #e1251b;
+  height: 50px;
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+
+  /* Align one left, one right */
+  justify-content: space-between;
+}
+
+.logo {
+  /* float: left; */
+  font-size: 18px;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: left;
+  gap: 5px;
+}
+
+.profile {
+  /* float: right; */
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+  gap: 16px;
+  align-items: center;
+}
+
+.profile div {
+  display: inline;
+}
+
+.avatar {
+  display: inline;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+main {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: inherit;
+  position: relative;
+}
+
+.posts {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 16px;
+}
+
+.post-header {
+  display: flex;
+  gap: 16px;
+
+  /* Align one left, one right */
+  justify-content: space-between;
+}
+
+.post-header-profile {
+  display: flex;
+  gap: 16px;
+}
+
+.post-header-profile img {
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: left;
+  width: 40px;
+  height: 40px;
+}
+
+.following-btn,
+.follow-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 24px;
+  width: 84px;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 10px;
+  border-radius: 32px;
+  justify-content: center;
+}
+
+.following-btn {
+  background: #163ac70f;
+  border: 1px solid #163ac733;
+  color: $blue;
+}
+
+.follow-btn {
+  background: $blue;
+  border: 1px solid $blue;
+  color: #fefefe;
+}
+
+.post-user-details {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+
+  .post-username {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .post-date-created {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #858c91;
+  }
+}
+
+.post-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #1d242999;
+}
+
+.post-footer {
+  display: flex;
+}

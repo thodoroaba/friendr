@@ -1,1 +1,34 @@
-<p>homepage works!</p>
+<header>
+  <div class="logo">Lenovo</div>
+  <div class="profile">
+    <div>Hello, {{ username }}</div>
+    <img class="avatar" [src]="userAvatarUrl" />
+  </div>
+</header>
+
+<main class="main">
+  <div class="posts">
+    <div class="post">
+      <div class="post-header">
+        <div class="post-header-profile">
+          <img class="avatar" [src]="userAvatarUrl" />
+          <div class="post-user-details">
+            <div class="post-username">{{ username }}</div>
+            <div class="post-date-created">52 minutes ago</div>
+          </div>
+        </div>
+        <button class="following-btn">Following</button>
+        <!-- <button class="follow-btn">Follow</button> -->
+      </div>
+      <div class="post-body">
+        <img src="/assets/images/post.png" />
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et.
+        </div>
+      </div>
+      <div class="post-footer"></div>
+    </div>
+  </div>
+</main>
+<router-outlet />
