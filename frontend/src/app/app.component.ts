@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'frontend';
+  isLoggedIn() {
+    // return !!localStorage.getItem('userName');
+    return document.location.pathname !== '/';
+  }
 }

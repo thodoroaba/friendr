@@ -5,11 +5,18 @@ import { AppComponent } from './app.component';
 import { PlaygroundModule } from './playground/playground.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageModule } from './homepage/homepage.module';
+import { TopNavbarComponent } from './top-navbar/top-navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomepageComponent],
-  imports: [BrowserModule, AppRoutingModule, PlaygroundModule, FormsModule],
+  declarations: [AppComponent, LoginComponent, TopNavbarComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    PlaygroundModule,
+    FormsModule,
+    HomepageModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

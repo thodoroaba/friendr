@@ -1,13 +1,10 @@
-<header>
-  <div class="logo">Lenovo</div>
-  <div class="profile">
-    <div>Hello, {{ username }}</div>
-    <img class="avatar" [src]="userAvatarUrl" />
-  </div>
-</header>
+<main>
 
-<main class="main">
-  <div class="posts">
+  <div class="posts-container">
+    <div>
+      <button class="add-post-btn basic-btn" routerLink="createPost">Add post</button>
+    </div>
+
     <div class="post">
       <div class="post-header">
         <div class="post-header-profile">
@@ -17,8 +14,8 @@
             <div class="post-date-created">52 minutes ago</div>
           </div>
         </div>
-        <button class="following-btn">Following</button>
-        <!-- <button class="follow-btn">Follow</button> -->
+        <button class="following-btn basic-btn">Following</button>
+        <!-- <button class="follow-btn basic-btn">Follow</button> -->
       </div>
       <div class="post-body">
         <img src="/assets/images/post.png" />
@@ -31,4 +28,3 @@
     </div>
   </div>
 </main>
-<router-outlet />

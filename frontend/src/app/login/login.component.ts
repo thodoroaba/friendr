@@ -17,7 +17,6 @@ export class LoginComponent {
   }
 
   signIn() {
-    console.log(this.username);
     localStorage.setItem('username', this.username);
     this.router.navigate(['homepage']);
   }
