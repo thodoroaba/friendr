@@ -22,15 +22,13 @@ const postsController = {
     console.log(postToBeCreated);
 
     //validate user object from request
-    if (!postToBeCreated || !postToBeCreated.id || !postToBeCreated.user_id || !postToBeCreated.title || !postToBeCreated.description) {
+    if (!postToBeCreated || !postToBeCreated.author || !postToBeCreated.title || !postToBeCreated.description) {
       res.status(400).send('Invalid post object');
       return;
     }
-
-    postToBeCreated.date = new Date().toISOString();
-
+    
     postsService.createPost(postToBeCreated);
-    res.status(201).send('User post successfully');
+    res.status(201).send('Post created successfully');
   },
   deletePost: async (req, res) => {
     console.log(`Deleted post with id: ${postId}`);

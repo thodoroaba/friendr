@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './top-navbar.component.scss',
 })
 export class TopNavbarComponent {
-  username = 'Andrei';
+  username = localStorage.getItem('firstName');
   userAvatarUrl =
     'https://aui.atlassian.com/aui/9.1/docs/images/avatar-person.svg';
 }

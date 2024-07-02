@@ -14,7 +14,7 @@ const routes: Routes = [
       import('./homepage/homepage.module').then((m) => m.HomepageModule),
     canActivate: [homepageGuard],
   },
-  { path: '**', component: LoginComponent },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HomepageModule } from './homepage/homepage.module';
 import { TopNavbarComponent } from './top-navbar/top-navbar.component';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, TopNavbarComponent],
@@ -17,7 +18,7 @@ import { TopNavbarComponent } from './top-navbar/top-navbar.component';
     FormsModule,
     HomepageModule,
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
