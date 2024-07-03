@@ -1,34 +1,15 @@
 $blue: #163ac7;
 
-main {
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  position: relative;
-}
-
 .posts-container {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  max-width: 700px;
+  max-width: 500px;
   margin-bottom: 3rem;
   align-items: center;
   flex-direction: column;
-}
 
-.basic-btn {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	padding: 8px 24px;
-	font-size: 14px;
-	font-weight: 500;
-	gap: 10px;
-	border-radius: 32px;
-	justify-content: center;
-	cursor: pointer;
+  app-post {
+    width: 100%;
   }
+}

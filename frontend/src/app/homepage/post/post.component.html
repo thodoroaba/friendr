@@ -7,14 +7,31 @@
         <div class="post-date-created">52 minutes ago</div>
       </div>
     </div>
-    <button class="following-btn basic-btn">Following</button>
-    <!-- <button class="follow-btn basic-btn">Follow</button> -->
+    <button type="button" class="following-btn basic-btn">Following</button>
+    <!-- <button 
+      type="button" class="follow-btn basic-btn">Follow</button> -->
   </div>
   <div class="post-body">
     <img src="/assets/images/post.png" />
-    <div>
+    <div class="post-description">
       {{ postInput.description }}
     </div>
   </div>
-  <div class="post-footer"></div>
+  <div class="post-footer">
+    <i
+      class="like fa-heart"
+      [ngClass]="liked ? 'fa-solid' : 'fa-regular'"
+      (click)="updateLikes()"
+    ></i>
+  </div>
+
+  <hr
+    style="
+      width: 100%;
+      height: 1px;
+      border-width: 0;
+      color: gray;
+      background-color: gray;
+    "
+  />
 </div>

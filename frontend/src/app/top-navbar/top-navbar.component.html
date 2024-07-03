@@ -1,7 +1,13 @@
 <header>
-    <div class="logo" [routerLink]="'homepage'">Lenovo</div>
-    <div class="profile">
-        <div>Hello, {{ username }}</div>
-        <img class="avatar" [src]="userAvatarUrl" />
+  <div class="logo" [routerLink]="'homepage'">Lenovo</div>
+  <div class="profile">
+    <div>Hello, {{ username }}</div>
+
+    <div class="dropdown">
+      <img class="avatar" [src]="userAvatarUrl" />
+      <div class="dropdown-content">
+        <div (click)="signOut()">Sign out</div>
+      </div>
     </div>
+  </div>
 </header>

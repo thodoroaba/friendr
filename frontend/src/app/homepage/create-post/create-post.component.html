@@ -1,3 +1,40 @@
 <main>
-    <h2>Create a post</h2>
+  <h2>Create a post</h2>
+
+  <div class="add-post-container">
+    <div class="input-wrapper">
+      <input
+        class="input"
+        type="text"
+        [(ngModel)]="title"
+        placeholder=" "
+        data-placeholder="Title"
+        required
+      />
+      <span class="placeholder">Title</span>
+    </div>
+
+    <div class="input-wrapper">
+      <input
+        class="input"
+        type="text"
+        [(ngModel)]="description"
+        placeholder=" "
+        data-placeholder="Description"
+        required
+      />
+      <span class="placeholder">Description</span>
+    </div>
+
+    <button
+      type="button"
+      class="basic-btn page-btn success-btn"
+      (click)="createPost()"
+      [disabled]="loading || !this.title || !this.description"
+    >
+      Post it
+    </button>
+
+    <div class="go-back">Return to <b routerLink="/homepage">home page</b></div>
+  </div>
 </main>

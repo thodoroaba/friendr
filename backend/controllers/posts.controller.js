@@ -8,23 +8,23 @@ const postsController = {
     const postId = req.params.id;
     const username = req.body.username;
 
-    if(!username){
-      res.status(400).send();
+    if (!username) {
+      res.status(400).json({ message: 'username is required' });
       return;
     }
 
     console.log(req.params.id);
     console.log(req.params.username);
-    
+
     const postObj = await postsService.getPostById(postId);
-    if(!postObj) {
-      res.status(404).send();
+    if (!postObj) {
+      res.status(404).json({ message: 'Post not found' });
       return;
     }
 
     const likes = postObj.likes;
 
-    if(likes.includes(username)) {
+    if (likes.includes(username)) {
       await postsService.removePostLikes(postId, username);
     } else {
       await postsService.addPostLikes(postId, username);
@@ -34,9 +34,6 @@ const postsController = {
 
     res.status(200).send(updatedPostObj);
   },
-
-
-
 
   getPost: async (req, res) => {
     console.log('Reached GET post controller');
@@ -59,12 +56,12 @@ const postsController = {
 
     //validate user object from request
     if (!postToBeCreated || !postToBeCreated.author || !postToBeCreated.title || !postToBeCreated.description) {
-      res.status(400).send('Invalid post object');
+      res.status(400).send({ message: 'Invalid post object' });
       return;
     }
-    
+
     postsService.createPost(postToBeCreated);
-    res.status(201).send('Post created successfully');
+    res.status(201).send({ message: 'Post created successfully' });
   },
   deletePost: async (req, res) => {
     console.log(`Deleted post with id: ${postId}`);

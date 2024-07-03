@@ -31,6 +31,12 @@
   );
 }
 
+.sign-up-text {
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 14px;
+}
+
 .sign-in-btn {
   max-width: 360px;
   margin-top: 16px;
@@ -44,47 +50,10 @@
   cursor: pointer;
 }
 
-// Input
-.input-wrapper {
-  margin-top: 8px;
-  max-width: 360px;
-  width: 100%;
-  position: relative;
-}
-.input {
-  height: 50px;
-  font-size: 16px;
-  padding: 11px 15px;
-  border-radius: 4px;
-  border: 1px solid #cbd8e3;
-  width: 100%;
-  outline: none;
-  box-sizing: border-box;
-}
-.placeholder {
-  pointer-events: none;
-  position: absolute;
-  font-weight: 400;
-  top: 18px;
-  left: 8px;
-  padding: 0 8px;
-  background-color: white;
-  border-radius: 5px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  color: grey;
-}
-.input:focus {
-  border-color: #0088ff;
-}
-.input:focus + .placeholder {
-  transform: scale(0.75) translateY(-36px) translateX(-15%);
-  color: #0088ff;
-  transition: 0.2s ease;
-}
-.input:not(:placeholder-shown).input:not(:focus) + .placeholder {
-  // When field is already filled
-  transform: scale(0.75) translateY(-36px) translateX(-15%);
-  color: #0088ff;
-  transition: 0.2s ease;
+@media screen and (max-width: 800px) {
+  .login-card {
+    width: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }

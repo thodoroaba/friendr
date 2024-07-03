@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="login-card">
+<div class="container" (keyup.enter)="isSignUp ? signUp() : signIn()">
+  <div class="login-card" *ngIf="!isSignUp">
     <h1>Welcome to Friendr</h1>
     <div>Sign in to your account</div>
 
@@ -15,8 +15,65 @@
       <span class="placeholder">Enter your username</span>
     </div>
 
-    <button class="sign-in-btn" (click)="signIn()" [disabled]="loading">
+    <button
+      class="sign-in-btn"
+      (click)="signIn()"
+      (keyup.enter)="signIn()"
+      [disabled]="loading"
+    >
       Sign in
     </button>
+
+    <div class="sign-up-text" (click)="isSignUp = true">
+      New here? Create a new account.
+    </div>
+  </div>
+
+  <div class="login-card" *ngIf="isSignUp">
+    <h1>Welcome to Friendr</h1>
+    <div>Create an account</div>
+
+    <div class="input-wrapper">
+      <input
+        class="input"
+        type="text"
+        [(ngModel)]="firstName"
+        placeholder=" "
+        data-placeholder="First name"
+        required
+      />
+      <span class="placeholder">First name</span>
+    </div>
+
+    <div class="input-wrapper">
+      <input
+        class="input"
+        type="text"
+        [(ngModel)]="lastName"
+        placeholder=" "
+        data-placeholder="Last name"
+        required
+      />
+      <span class="placeholder">Last name</span>
+    </div>
+
+    <div class="input-wrapper">
+      <input
+        class="input"
+        type="text"
+        [(ngModel)]="newUsername"
+        placeholder=" "
+        data-placeholder="Enter a new username"
+        required
+      />
+      <span class="placeholder">Enter a new username</span>
+    </div>
+
+    <button 
+    type="button" class="sign-in-btn" (click)="signUp()" [disabled]="loading">
+      Sign up
+    </button>
+
+    <div class="sign-up-text" (click)="isSignUp = false">Sign in instead?</div>
   </div>
 </div>

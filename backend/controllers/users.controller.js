@@ -7,7 +7,7 @@ const usersController = {
     console.log(username);
     const userObj = await usersService.getUserByUsername(username);
     if (!userObj) {
-      res.status(404).send('Username not found');
+      res.status(404).json({ message: 'Username not found' });
       return;
     }
     res.status(200).send(userObj);
@@ -19,12 +19,12 @@ const usersController = {
 
     //validate user object from request
     if (!userToBeCreated || !userToBeCreated.id || !userToBeCreated.firstName || !userToBeCreated.lastName || !userToBeCreated.username) {
-      res.status(400).send('Invalid user object');
+      res.status(400).send({ message: 'Invalid user object' });
       return;
     }
 
     usersService.createUser(userToBeCreated);
-    res.status(201).send('User created successfully');
+    res.status(201).json(userToBeCreated);
   },
   deleteUser: async (req, res) => {
     console.log(`Deleted user with id: ${req.params.id}`);
