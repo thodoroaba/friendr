@@ -2,11 +2,47 @@ const PostModel = require('../data/users.model');
 const postsService = require('../services/posts.service');
 
 const postsController = {
+  updatePostLikes: async (req, res) => {
+    console.log('Reached PATCH post likes controller');
+
+    const postId = req.params.id;
+    const username = req.body.username;
+
+    if(!username){
+      res.status(400).send();
+      return;
+    }
+
+    console.log(req.params.id);
+    console.log(req.params.username);
+    
+    const postObj = await postsService.getPostById(postId);
+    if(!postObj) {
+      res.status(404).send();
+      return;
+    }
+
+    const likes = postObj.likes;
+
+    if(likes.includes(username)) {
+      await postsService.removePostLikes(postId, username);
+    } else {
+      await postsService.addPostLikes(postId, username);
+    }
+
+    const updatedPostObj = await postsService.getPostById(postId);
+
+    res.status(200).send(updatedPostObj);
+  },
+
+
+
+
   getPost: async (req, res) => {
     console.log('Reached GET post controller');
     const postId = req.params.id;
     console.log(req.params.id);
-    const postObj = await usersService.getPostById(postId);
+    const postObj = await postsService.getPostById(postId);
     res.status(200).send(postObj);
   },
   getPosts: async (req, res) => {

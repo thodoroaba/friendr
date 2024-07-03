@@ -1,0 +1,20 @@
+<div class="post">
+  <div class="post-header">
+    <div class="post-header-profile">
+      <img class="avatar" [src]="userAvatarUrl" />
+      <div class="post-user-details">
+        <div class="post-us:wrapper">{{ postInput.author }}</div>
+        <div class="post-date-created">52 minutes ago</div>
+      </div>
+    </div>
+    <button class="following-btn basic-btn">Following</button>
+    <!-- <button class="follow-btn basic-btn">Follow</button> -->
+  </div>
+  <div class="post-body">
+    <img src="/assets/images/post.png" />
+    <div>
+      {{ postInput.description }}
+    </div>
+  </div>
+  <div class="post-footer"></div>
+</div>

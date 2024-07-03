@@ -1,30 +1,12 @@
 <main>
-
   <div class="posts-container">
     <div>
-      <button class="add-post-btn basic-btn" routerLink="createPost">Add post</button>
+      <button class="add-post-btn basic-btn" routerLink="createPost">
+        Add post
+      </button>
     </div>
-
-    <div class="post">
-      <div class="post-header">
-        <div class="post-header-profile">
-          <img class="avatar" [src]="userAvatarUrl" />
-          <div class="post-user-details">
-            <div class="post-username">{{ username }}</div>
-            <div class="post-date-created">52 minutes ago</div>
-          </div>
-        </div>
-        <button class="following-btn basic-btn">Following</button>
-        <!-- <button class="follow-btn basic-btn">Follow</button> -->
-      </div>
-      <div class="post-body">
-        <img src="/assets/images/post.png" />
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et.
-        </div>
-      </div>
-      <div class="post-footer"></div>
-    </div>
+    <ng-container *ngFor="let post of posts">
+      <app-post [postInput]="post"></app-post>
+    </ng-container>
   </div>
 </main>

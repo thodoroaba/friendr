@@ -4,11 +4,19 @@
     <div>Sign in to your account</div>
 
     <div class="input-wrapper">
-      <input class="input" type="text" [(ngModel)]="username" placeholder=" " data-placeholder="Enter your username"
-        required />
+      <input
+        class="input"
+        type="text"
+        [(ngModel)]="username"
+        placeholder=" "
+        data-placeholder="Enter your username"
+        required
+      />
       <span class="placeholder">Enter your username</span>
     </div>
 
-    <button class="sign-in-btn" (click)="signIn()">Sign in</button>
+    <button class="sign-in-btn" (click)="signIn()" [disabled]="loading">
+      Sign in
+    </button>
   </div>
 </div>

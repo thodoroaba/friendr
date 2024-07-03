@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { RouterModule, Routes } from '@angular/router';
+import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomepageComponent, CreatePostComponent],
+  declarations: [HomepageComponent, CreatePostComponent, PostComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
 export class HomepageModule {}

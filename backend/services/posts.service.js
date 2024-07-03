@@ -2,8 +2,14 @@ const PostModel = require('../data/posts.model');
 const { v4: uuidv4 } = require('uuid');
 
 const postsService = {
+  removePostLikes: async (postId, username) => {
+    await PostModel.updateOne({id: postId }, {$pull: {likes: username}});
+  },
+  addPostLikes: async (postId, username) => {
+    await PostModel.updateOne({id: postId }, {$push: {likes: username}});
+  },
   getPostById: async (postId) => {
-    const response = await PostModel.findOne({ id: userId }, { _id: 0 });
+    const response = await PostModel.findOne({ id: postId }, { _id: 0 });
     return response;
   },
   getPosts: async () => {

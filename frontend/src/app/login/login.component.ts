@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,7 @@ import { AppService } from '../app.service';
 })
 export class LoginComponent {
   username: string = '';
+  loading = false;
 
   constructor(private router: Router, private appService: AppService) {
     const username = localStorage.getItem('username');
@@ -18,17 +20,27 @@ export class LoginComponent {
   }
 
   signIn() {
-    this.appService.getUserByUsername(this.username).subscribe({
-      next: (response) => {
-        console.log(response);
-        localStorage.setItem('firstName', response?.firstName);
-        localStorage.setItem('lastName', response?.lastName);
-        localStorage.setItem('username', this.username);
-        this.router.navigate(['homepage']);
-      },
-      error: (error) => {
-        alert('Username not found');
-      },
-    });
+    this.loading = true;
+    this.appService
+      .getUserByUsername(this.username)
+      .pipe(first())
+      .subscribe({
+        next: (response) => {
+          this.loading = false;
+          console.log(response);
+          // this.appService.user = {
+          //   firstName: 'Test',
+          //   lastName: response?.lastName,
+          // };
+          localStorage.setItem('firstName', response?.firstName);
+          localStorage.setItem('lastName', response?.lastName);
+          localStorage.setItem('username', this.username);
+          this.router.navigate(['homepage']);
+        },
+        error: (error) => {
+          this.loading = false;
+          alert('Username not found');
+        },
+      });
   }
 }
